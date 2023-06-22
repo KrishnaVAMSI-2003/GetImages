@@ -1,4 +1,5 @@
-*{
+body{
+    text-align: center;
     margin:0px;
     background: linear-gradient(90deg, rgba(255,240,146,0.9593373493975904) 2%, rgba(209,251,102,1) 100%);
 }
@@ -9,25 +10,43 @@
     padding:0.5rem;
 }
 .search-bar{
-    
     padding:0.5rem;
     border-radius: 1rem;
     border: 0.1rem solid black;
+    background: none;
 }
 .container{
     margin-top:0.2rem;
     width:100%;
-    columns: 2;
-    padding:0.3rem
+    padding:0.3rem;
 }
 .container > img{
-    
     max-width:100%;
     object-fit: fill;
     margin:0.3rem 0;
     border-radius: 5px;
-    
 }
 .container img:hover{
     box-shadow: 4px 4px 4px rgb(89, 127, 147);
+}
+
+@media screen and (max-device-width:375px){
+    .container{
+        columns:1;
+    }
+}
+@media screen and (max-device-width:500px){
+    .container{
+        columns:2;
+    }
+}
+@media screen and (min-device-width:500px){
+    .container{
+        columns:3;
+    }
+}
+@media screen and (min-device-width:725px){
+    .container{
+        columns:4;
+    }
 }
