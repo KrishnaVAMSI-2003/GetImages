@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react"
+import SearchBar from "./components/searchbar"
+import RenderImages from "./components/RenderImages"
+import './style.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Variables = createContext()
+
+export default function App() {
+  const [keyword, setKeyword] = useState()
+  const [images, setImages] = useState()
+  return(
+    <div className="box">
+      <Variables.Provider value={{keyword,setKeyword,setImages}}>
+        <SearchBar/>
+      </Variables.Provider>
+      
+      <RenderImages images={images} keyword={keyword}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export {Variables}
