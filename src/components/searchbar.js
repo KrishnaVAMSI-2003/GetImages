@@ -1,14 +1,13 @@
 import { Variables } from "../App"
 import { useContext } from "react"
 import axios from 'axios'
-
+import '../style.css'
 
 export default function SearchBar() {
-    const {keyword, setKeyword,setImages,setRender} = useContext(Variables)
+    const {keyword, setKeyword,setImages} = useContext(Variables)
     
     const handleChange = (event) => {
         setKeyword(event.target.value)
-        setRender(false)
     }
     const handleSubmit = async(event)=>{
         event.preventDefault()
@@ -21,12 +20,11 @@ export default function SearchBar() {
             }
         })
         setImages(data.data.results)
-        setRender(true)
     }
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange}/>
+                <input onChange={handleChange} placeholder='enter a keyword' className="search-bar"/>
             </form>
         </div>
     )

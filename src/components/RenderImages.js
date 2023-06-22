@@ -1,10 +1,10 @@
-
+import '../style.css'
 
 export default function RenderImages(props) {
     return(
-        <div>
+        <div className="container">
             {props.images.map((img)=>{
-                return <img src={img.urls.regular}/>
+                return <img src={img.urls.regular} alt=""/>
             })}
         </div>
     )
