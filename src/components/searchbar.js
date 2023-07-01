@@ -13,7 +13,7 @@ export default function SearchBar() {
         event.preventDefault()
         const data = await axios.get('https://api.unsplash.com/search/photos',{
             headers: {
-                Authorization: 'Client-ID gL2jYebJQ7_e8_WlQqKPWjuNDXQLGlCv9C875LaADdQ'
+                Authorization: 'Client-ID jfkjewrewfkjewfkjkwhhwhrhewroi'
             },
             params: {
                 query : keyword
